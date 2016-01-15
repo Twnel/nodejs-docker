@@ -7,7 +7,7 @@ RUN apt-get update -y && apt-get install --no-install-recommends -y -q curl pyth
     apt-get clean && rm /var/lib/apt/lists/*_*
 
 # Install the latest LTS release of nodejs
-RUN mkdir /nodejs && curl https://nodejs.org/dist/v4.2.3/node-v4.2.3-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1
+RUN mkdir /nodejs && curl https://nodejs.org/dist/v4.2.4/node-v4.2.4-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ENV PATH $PATH:/nodejs/bin
 
