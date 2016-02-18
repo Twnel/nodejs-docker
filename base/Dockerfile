@@ -19,7 +19,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN npm install https://storage.googleapis.com/gae_node_packages/semver.tar.gz
 
 # Keepalive TCP
-sysctl -w net.ipv4.tcp_keepalive_time=90 net.ipv4.tcp_keepalive_probes=3 net.ipv4.tcp_keepalive_intvl=10
+RUN sysctl -w net.ipv4.tcp_keepalive_time=90 net.ipv4.tcp_keepalive_probes=3 net.ipv4.tcp_keepalive_intvl=10
 
 # Add the node version install script
 ADD install_node /usr/local/bin/install_node
