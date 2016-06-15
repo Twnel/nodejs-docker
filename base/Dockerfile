@@ -18,7 +18,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ENV PATH $PATH:/nodejs/bin
 
 # Timezone
-ENV TZ=America/New_York
+ENV TZ=UTC
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Install semver, as required by the node version install script.
